@@ -1,0 +1,10 @@
+.accordion-item{
+    margin: 1rem 0 !important;
+}
+.accordion-item:not(:first-of-type){
+    border-top: 1px solid #C7C7C7 !important;
+}
+
+.accordion-button::after{
+    display: none;
+}

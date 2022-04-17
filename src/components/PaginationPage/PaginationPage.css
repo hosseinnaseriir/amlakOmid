@@ -1,0 +1,18 @@
+.pagination{
+    justify-content: center;
+    margin-top: 2rem;
+}
+.page-item{
+    padding: 0 1rem;
+}
+.page-item a,
+.pagination-sm .page-item:last-child .page-link,
+.pagination-sm .page-item:first-child .page-link
+{
+    color:#6768AB;
+    border:1px solid #6768AB;
+    border-radius: .25rem;
+    
+}
+
+

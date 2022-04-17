@@ -1,0 +1,13 @@
+[dir='rtl'] .slick-prev:before {
+    content: '\003E'!important;
+    color: #6768AB;
+}
+[dir='rtl'] .slick-next:before {
+    content: '\003C'!important;
+    color: #6768AB;
+}
+.slick-prev:before, .slick-next:before {
+    font-family: 'Yekan-Bakh'!important;
+    font-size: 35px!important;
+    font-weight: 900;
+}

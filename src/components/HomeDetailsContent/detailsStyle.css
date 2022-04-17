@@ -1,0 +1,24 @@
+.secondery-slider ul{
+    justify-content: center !important;
+    margin: 1.5rem 0 !important;
+}
+
+.splide__slide{
+    border-radius: .5rem;
+}
+
+
+.details-content-btn{
+    width: 25%;
+}
+
+.details-content-btn svg{
+    flex: 1;
+}
+.details-content-btn span{
+    flex: 3;
+}
+
+.description-paragraph{
+    line-height: 2.4rem;
+}

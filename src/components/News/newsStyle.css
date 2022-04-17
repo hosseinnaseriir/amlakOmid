@@ -1,0 +1,24 @@
+.newsForm{
+    max-width: 85%;
+}
+
+.input-form{
+    padding: 0.6rem 2.5rem
+}
+
+.input-form::placeholder{
+    color: #6768AB!important;
+    font-weight: 700!important;
+}
+
+.news-textArea{
+    padding: 0.6rem 2.5rem;
+
+}
+
+.news-textArea::placeholder{
+    color: #6768AB!important;
+
+    font-weight:bold;
+
+}

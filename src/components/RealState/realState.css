@@ -1,0 +1,33 @@
+.mainCard{
+    width: 20%;
+}
+
+@media (max-width: 997px) {
+    .mainCard{
+        width: auto !important;
+    }
+    .realStateBack input{
+        width: 75% !important;
+    }
+}
+
+
+.realStateBack{
+    background-image: url(./../../../public/img/realState/realStateBack.png);
+    background-position: center;
+    margin-top: 70px;
+}
+.realStateBack input{
+    line-height: 63px;
+    width: 35%;
+    border: none;
+    outline: none;
+    border-radius: 0 20px 20px 20px;
+}
+
+.realStateBack a{
+    line-height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 20px 0 20px 20px;
+}

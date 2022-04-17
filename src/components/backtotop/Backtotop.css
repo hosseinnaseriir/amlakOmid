@@ -1,0 +1,13 @@
+.Backtotop {
+    position: fixed;
+    cursor: pointer;
+    right: 10px;
+    bottom: 30px;
+    height: 40px;
+    width: 40px; 
+    border-radius: 50%;
+    z-index: 99;
+}
+.Backtotop svg {
+    font-size: 25px;
+}
