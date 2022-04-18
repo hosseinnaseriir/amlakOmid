@@ -19,12 +19,14 @@ import FaqPage from './components/Faq/index';
 import SignIn from './components/SignIn/index';
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from './components/Loading/index';
 
 
 function App() {
   return (
     <div className="App overflow-hidden">
      <ToastContainer/>
+     <Loading/>
       <Header/>
       <Backtotop/>
       <Routes>
