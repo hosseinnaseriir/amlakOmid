@@ -28,7 +28,7 @@ const RealStateRegistration = () => {
 
  async function BtnHandeller(){
     try{
-        setShowLoading()
+        setShowLoading(true)
         const RealStateRegistration = new FormData();
         RealStateRegistration.append('name',name)
         RealStateRegistration.append("family", lastName);

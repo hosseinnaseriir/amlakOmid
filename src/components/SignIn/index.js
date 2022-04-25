@@ -5,6 +5,7 @@ import {Tabs,Tab} from "react-bootstrap";
 import { useState } from 'react';
 import AdvisorRegistration from './AdvisorRegistration';
 import RealStateRegistration from "./RealStateRegistration";
+import Login from './Login';
 
 
 const SignIn = () => {
@@ -21,21 +22,7 @@ const SignIn = () => {
             className="mb-3"
             >
             <Tab eventKey="home" title="ثبت نام کاربر">
-                <div className="shadow-es rounded-3 py-3 px-3 mt-5  text-center title-text">
-                      <Title title="ورود"/>
-                        <div className="d-flex justify-content-center flex-column align-items-center">
-                        <Form className='signIn-form mb-5'>
-                            <Form.Control className="w-100 shadow-es py-2 my-4 border-0" type="text" placeholder="شماره همراه خود را وارد نمایید" />
-                            <button className="btn fw-bold btn-border mb-lg-0 mt-lg-0 mt-4 mb-4 px-5  " href="#">وارد کردن شماره </button>
-
-                            
-                            <Form.Control className="w-100 shadow-es py-2 my-4 border-0" type="text" placeholder="کد تایید 5 رقمی را وارد نمایید" />
-                            <button className="btn fw-bold btn btn-es mb-lg-0 mt-lg-0 mt-4 mb-4 px-5  " href="#">ورود </button>
-
-                            
-                        </Form>
-                        </div>
-                    </div>
+               <Login/>
             </Tab>
 
             <Tab eventKey="moshaverAmlak" title="ثبت نام مشاور املاک">
