@@ -48,6 +48,7 @@ const verifyPhoneCodeHandeller= async(e)=>{
       const res= await axios.post(VerifyPhoneNumberApi,{phoneNumber:phoneNumber ,otp:verifyPhoneNumber })
       if(res.status===200){
         // toast.success(res.data.message);
+        console.log(res.data)
         setShowLoading(false);
       }
         

@@ -32,8 +32,8 @@ function About() {
               <Col lg={8} md={6} sm={12} className='px-md-0 px-3'>
                   <h5 className='fw-bold text-md-end text-center'>ویژگی هایی که ما را خاص می کند :</h5>
                   <ListGroup className='List border-0 mt-3'>
-                      {features.map((feature)=>(
-                        <ListGroup.Item className='border-0 bg-transparent px-0 d-flex pb-3'>
+                      {features.map((feature,index)=>(
+                        <ListGroup.Item key={index} className='border-0 bg-transparent px-0 d-flex pb-3'>
                           <FontAwesomeIcon className='text-es f-25' icon={faCheckSquare} />
                           <span className='me-2' >{feature}</span>
                       </ListGroup.Item>

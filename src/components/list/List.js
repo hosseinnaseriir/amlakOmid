@@ -4,7 +4,7 @@ function List({lists}) {
   return (
         <ListGroup className='List border-0'>
             {lists.map((list)=>(
-                <ListGroup.Item className='border-0 bg-transparent'>
+                <ListGroup.Item key={list.href} className='border-0 bg-transparent'>
                   <Link to={list.href} className='text-decoration-none text-dark'>{list.title}</Link>
                   </ListGroup.Item>
             ))}

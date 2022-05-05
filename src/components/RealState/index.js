@@ -87,7 +87,7 @@ function RealState() {
 
                 <div className='d-flex flex-wrap mt-3 justify-content-center'>
                     {offices.map((office)=>(
-                            <Card myclass='mainCard' img={office.img} title={office.title}/>
+                            <Card key={office.img} myclass='mainCard' img={office.img} title={office.title}/>
                         ))} 
                 </div>
             

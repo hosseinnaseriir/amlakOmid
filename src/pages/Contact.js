@@ -1,3 +1,4 @@
+import React , { useState ,useContext} from 'react';
 import { Container,Row,Col,ListGroup,Form } from 'react-bootstrap';
 import BgTop from '../components/bgTop/BgTop';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -5,7 +6,45 @@ import {faMobileAlt,faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
 import {faInstagram} from '@fortawesome/free-brands-svg-icons'
 import Btn from '../microComponents/Btn';
 import MyMap from '../components/map/Map';
+import { toast } from 'react-toastify';
+import axios  from 'axios';
+import { ContactApi } from '../api';
+import { context } from './../context/index';
+
 function Contact() { 
+
+  const [fullName, setFullName] = useState();
+  const [email, setEmail] = useState();
+  const [title, setTitle] = useState();
+  const [discription, setdiscription] = useState();
+
+
+  const {setShowLoading} = useContext(context);
+
+//////Code Btn
+const contactFormHandeller= async(e)=>{
+  e.preventDefault();
+  setShowLoading(true);
+
+  try {
+    const res= await axios.post(ContactApi,{fullName:fullName ,email:email,title:title,description:discription })
+    if(res.status===200){
+      toast.success(res.data.message)
+
+      setShowLoading(false);
+    }
+      
+  } catch (err) {
+      if(err?.response?.data){
+          err?.response?.data?.errors?.map(issue => toast.error(issue))
+      }
+      else{
+          toast.error('مشکلی پیش آمده است !')
+      }
+      setShowLoading(false);
+  }
+}
+
 
   return (
     <div className="Contact mt-5 pt-4">
@@ -36,18 +75,18 @@ function Contact() {
                 <Col lg={10} sm={12} className='mx-auto'>
                     <Form className='row'>
                     <Form.Group className="mb-4 col-md-6 col-12">
-                            <input className='form-control lh-xl border-3 rounded-4' placeholder="نام و نام‌خانوادگی"  />
+                            <input onChange={(e)=>setFullName(e.target.value)} className='form-control lh-xl border-3 rounded-4' placeholder="نام و نام‌خانوادگی"  />
                     </Form.Group>
                     <Form.Group className="mb-4 col-md-6 col-12">
-                        <input type="email" className='email form-control lh-xl border-3 rounded-4' placeholder="آدرس ایمیل" required />
+                        <input onChange={(e)=>setEmail(e.target.value)} type="email" className='email form-control lh-xl border-3 rounded-4' placeholder="آدرس ایمیل" required />
                     </Form.Group>
                     <Form.Group className="mb-4 col-12">
-                        <input className='form-control lh-xl border-3 rounded-4' placeholder="عنوان پیام"  />
+                        <input onChange={(e)=>setTitle(e.target.value)} className='form-control lh-xl border-3 rounded-4' placeholder="عنوان پیام"  />
                     </Form.Group>
                     <Form.Group className="mb-4 col-12">
-                       <textarea className='form-control border-3 rounded-4' placeholder='متن پیام...' rows="6" required></textarea>
+                       <textarea onChange={(e)=>setdiscription(e.target.value)} className='form-control border-3 rounded-4' placeholder='متن پیام...' rows="6" required></textarea>
                     </Form.Group>
-                    <Btn title="ارسال پیام" type="submit" myClass="btn-es lh-lg col-lg-3 col-md-4 col-sm-5 col-6 f-22 mx-auto rounded-5"/>
+                    <Btn onClick={(e)=>contactFormHandeller(e)} title="ارسال پیام" type="submit" myClass="btn-es lh-lg col-lg-3 col-md-4 col-sm-5 col-6 f-22 mx-auto rounded-5"/>
                 </Form>
                   
                 </Col>

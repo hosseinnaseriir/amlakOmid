@@ -85,7 +85,7 @@ function Carousel() {
   return (
       <Slider {...settings}>
           {offices.map((office)=>(
-              <Card img={office.img} title={office.title}/>
+              <Card key={office.img} img={office.img} title={office.title}/>
           ))} 
       </Slider>
   );
