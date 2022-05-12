@@ -16,10 +16,10 @@ const SingleBlogSideBar = ({blogsideBarParagraph}) => {
                {blogsideBarParagraph}
            </p>
 
-           <a className="btn btn-es fw-bold px-2 mb-3 w-100" href="#home">خرید ملک</a>
-           <a className="btn btn-es fw-bold px-2 mb-3 w-100" href="#home">رهن و اجاره ملک</a>
-           <a className="btn btn-es fw-bold px-2 mb-3 w-100" href="#home">ثبت آگهی رایگان ملک</a>
-           <a className="btn btn-es fw-bold px-2 mb-3 w-100" href="#home">ثبت آگهی مشاورین املاک</a>
+           <Link className="btn btn-es fw-bold px-2 mb-3 w-100" to="/buy">خرید ملک</Link>
+           <Link className="btn btn-es fw-bold px-2 mb-3 w-100" to="/buy">رهن و اجاره ملک</Link>
+           <Link className="btn btn-es fw-bold px-2 mb-3 w-100" to={localStorage.getItem('token') ? '/news':"/signin"}>ثبت آگهی رایگان ملک</Link>
+           <Link className="btn btn-es fw-bold px-2 mb-3 w-100" to={localStorage.getItem('token') ? '/news':"/signin"}>ثبت آگهی مشاورین املاک</Link>
             
          </div>
      );

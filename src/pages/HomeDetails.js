@@ -4,7 +4,7 @@ import HomeDetailsContent from '../components/HomeDetailsContent';
 import SugessBox from './../blocks/sugess/SugessBox';
 
 
-
+ 
 
 function HomeDetails() {
   return (

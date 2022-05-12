@@ -6,6 +6,7 @@ import  axios  from 'axios';
 import { ArticlesApi, STATICS } from '../../api';
 import { context } from './../../context/index';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 function Blog() {
 
@@ -45,8 +46,10 @@ function Blog() {
 
         <Row>
           {blogs.map((blog)=>(
-              <Col key={blog._id} lg={4} md={6} sm={12} className='ArticleCards pt-5'>
-              <ArticleCard img={STATICS + blog.articleImage} title={blog.title} content={blog.summary} />
+              <Col key={blog.normalName} lg={4} md={6} sm={12} className='ArticleCards pt-5'>
+                <Link to={`/singleBlog?${blog.normalName}`}>
+                  <ArticleCard img={STATICS + blog.articleImage} title={blog.title} content={blog.summary} />
+                </Link>
          </Col>
           ))}
         </Row>

@@ -7,13 +7,16 @@ import { PhoneNamberApi } from "../../api";
 import { toast } from 'react-toastify';
 import { context } from "../../context";
 import { VerifyPhoneNumberApi } from './../../api/index';
+import { useNavigate } from "react-router-dom";
+
+
 
 
 
 const  Login= () => {
     const [phoneNumber, setPhoneNumber] = useState();
     const [verifyPhoneNumber, setVerifyPhoneNumber] = useState();
-    
+    const navigate=useNavigate()
 
     const {setShowLoading} = useContext(context);
 ///Phone Btn
@@ -43,10 +46,12 @@ const phoneNumberHandeller = async (e)=>{
 const verifyPhoneCodeHandeller= async(e)=>{
     e.preventDefault();
     setShowLoading(true);
-
+    navigate("/", { replace: true });
     try {
       const res= await axios.post(VerifyPhoneNumberApi,{phoneNumber:phoneNumber ,otp:verifyPhoneNumber })
       if(res.status===200){
+          localStorage.setItem('token',res.data.token)
+           
         // toast.success(res.data.message);
         console.log(res.data)
         setShowLoading(false);
@@ -72,12 +77,15 @@ const verifyPhoneCodeHandeller= async(e)=>{
               onClick={(e)=>phoneNumberHandeller(e)}
               className="btn fw-bold btn-border mb-lg-0 mt-lg-0 mt-4 mb-4 px-5  " href="#">وارد کردن شماره </button>
 
-              
-              <Form.Control onChange={(e)=>setVerifyPhoneNumber(e.target.value)}  className="w-100 shadow-es py-2 my-4 border-0" type="text" placeholder="کد تایید 5 رقمی را وارد نمایید" />
-              <button onClick={(e)=>verifyPhoneCodeHandeller(e)} className="btn fw-bold btn btn-es mb-lg-0 mt-lg-0 mt-4 mb-4 px-5  " href="#">ورود </button>
+            </Form>  
+          <Form className='signIn-form mb-5'>
 
+              <Form.Control onChange={(e)=>setVerifyPhoneNumber(e.target.value)}  className="w-100 shadow-es py-2 my-4 border-0" type="text" placeholder="کد تایید 5 رقمی را وارد نمایید" />
+              <button onClick={(e)=>verifyPhoneCodeHandeller(e)} className="btn fw-bold btn btn-es mb-lg-0 mt-lg-0 mt-4 mb-4 px-5">ورود </button>
+
+            </Form>  
               
-          </Form>
+    
           </div>
       </div>
      );

@@ -64,7 +64,7 @@ function Search() {
             title="نوع واگذاری"
              myClass="col-sm-6 col-12"/>
             <SingleSelect val={[
-                "1",
+                "1",   
                 "2",
                 "3",
                 "4",

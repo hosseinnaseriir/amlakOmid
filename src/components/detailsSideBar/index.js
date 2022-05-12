@@ -4,6 +4,7 @@ import {faClock,faPhone} from '@fortawesome/free-solid-svg-icons'
 import './detailsSideBar.css'
 import { svg } from './../../assets/svg';
 import { Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const DetailsSidBar = ({profile,time,user,mainTitle,kind,Residential,address,addressText,bed,bedNumber,meters,metersNumber,price,priceNumber}) => {
@@ -83,7 +84,7 @@ const DetailsSidBar = ({profile,time,user,mainTitle,kind,Residential,address,add
          
                   </ul> 
 
-                           <a className="btn btn-es fw-bold call-user-btn mb-4" href="#">
+                           <Link className="btn btn-es fw-bold call-user-btn mb-4" to={localStorage.getItem('token') ? '/news':"/signin"}>
                            <FontAwesomeIcon
                         icon={faPhone}
                         />
@@ -91,14 +92,14 @@ const DetailsSidBar = ({profile,time,user,mainTitle,kind,Residential,address,add
                               ثبت آگهی
                               </span> 
                               
-                              </a>
+                              </Link>
             </div>
              <Form.Control as="textarea" className='textarea-sidebar border-es f-16 p-3 my-4' placeholder='یادداشت شما...' rows={5}/>
 
 
                <div className='d-flex flex-wrap justify-content-between mb-4'>
-                     <a className="btn fw-bold  flex-1 sideBar-btn" href="#">املاک</a>
-                     <a className="btn fw-bold  flex-1 sideBar-btn" href="#">خریدوفروش خانه</a>
+                     <Link className="btn fw-bold  flex-1 sideBar-btn" to="/">املاک</Link>
+                     <Link className="btn fw-bold  flex-1 sideBar-btn" to="/buy">خریدوفروش خانه</Link>
                </div>
           </>
      );

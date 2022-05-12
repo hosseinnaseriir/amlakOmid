@@ -14,30 +14,30 @@ function Footer() {
         },
         {
           'title': 'مجله املاک',
-          'href' : '/articles',
+          'href' : '/blog',
         },
         {
           'title': 'تبلیغات',
-          'href' : '',
+          'href' : '/advisorDetail',
         },
       
   ];
   const list2 = [
     {
       'title': 'ورود و ثبت‌‌نام مشاورین املاک',
-      'href' : ''
+      'href' : '/signin'
     },
     {
       'title':'ورود و ثبت‌نام کاربر',
-      'href' : ''
+      'href' : '/signin'
     },
     {
       'title':'قوانین درج‌ ‌آگهی',
-      'href' : ''
+      'href' : '/rules'
     },
     {
       'title': 'سوالات متداول',
-      'href' : ''
+      'href' : '/faq'
     },
   ];
   return (
@@ -56,7 +56,7 @@ function Footer() {
             </Col>
             <Col sm={12} className='pt-3 px-4'>
               <div className='d-flex flex-md-row flex-column text-sm-center justify-content-md-between border-top border-3 pt-3'>
-                  <p className='text-sm-center'>کلیه حقوق این سایت متعلق به گروه ساسان زارع است.</p>
+                  <p className='text-sm-center'>کلیه حقوق این سایت متعلق به گروه املاک امیداست.</p>
                   <div>
                     <FontAwesomeIcon className='text-secondary h4 ms-3' icon={faPinterest} />
                     <FontAwesomeIcon className='text-secondary h4 ms-3' icon={faInstagram} />

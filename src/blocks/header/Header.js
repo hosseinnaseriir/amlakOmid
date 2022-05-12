@@ -17,7 +17,7 @@ function Header() {
                           <Col lg={6} >
                             <Nav defaultActiveKey="/home" className='dir-r pe-0 text-center' as="ul">
                               <Nav.Item as="li">
-                                <Nav.Link href="/home">خرید</Nav.Link>
+                                <Nav.Link href="/buy">خرید</Nav.Link>
                               </Nav.Item>
                               <Nav.Item as="li">
                                 <Nav.Link eventKey="link-1">رهن و اجاره</Nav.Link>
@@ -32,7 +32,7 @@ function Header() {
                                 <Nav.Link eventKey="link-2">مناقصه</Nav.Link>
                               </Nav.Item>
                               <Nav.Item as="li">
-                                <Nav.Link eventKey="link-2">بلاگ</Nav.Link>
+                                <Nav.Link href="/blog" eventKey="link-2">بلاگ</Nav.Link>
                               </Nav.Item>
                             </Nav>
                           </Col>

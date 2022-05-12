@@ -2,18 +2,50 @@ import { Container, Row, Col } from 'react-bootstrap';
 import SingleBlogContent from './SingleBlogContent';
 import Estate from './../Estate';
 import SingleBlogSideBar from './SingleBlogSideBar';
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState, useContext } from 'react';
+import  axios  from 'axios';
+import { SingleBlogApi, STATICS } from './../../api/index';
+import parse from 'html-react-parser';
+import { toast } from 'react-toastify';
+import { context } from './../../context/index';
 
 
 const SingleBlog = () => {
+
+    const location =useLocation();
+    const {setShowLoading} = useContext(context);
+     
+   const [singleBlog,setSingleBlog]= useState({})
+
+   console.log(singleBlog)
+
+    useEffect(() => {
+        setShowLoading(true);
+
+        console.log(location.search)
+        console.log(location.search.substring(1))
+        axios.get(SingleBlogApi(location.search.substring(1)))
+        .then((res)=>{
+            setSingleBlog(res.data.articles[0])
+        setShowLoading(false);
+
+        }).catch((err)=>{
+            toast.err('مشکلی پیش آمده است !')
+        setShowLoading(false);
+
+        })
+    }, []);
+
     return ( 
         <Container className="pt-5 mt-5 pb-4">
                 <Row>
 
                     <Col lg={8}>
                         <SingleBlogContent
-                        title='ثبت‌نام بیش از ۹۸۲۰۰۰ نفر در سامانه نهضت ملی مسکن'
-                        paragraph='نهضت ملی مسکن یکی از سیاست‌های کلان دولت ســــــیزدهم در حوزه مســـکن است که بر اساس این سیاست، احداث ۴  میلیــــون واحد مسکونی در ۴ سال در برنامه این دولت قرار گرفته است. متقاضیان واقعی مسکن می‌توانند با داشتن چهار  شرط تاهل و سرپرست خانوار بودن، حداقل سا'
-                        images='/img/blog-pic.png'
+                        title={singleBlog.title}
+                        paragraph={parse(singleBlog.text || '' )}
+                        images={STATICS + singleBlog.articleImage}
                         />
                     </Col>
 

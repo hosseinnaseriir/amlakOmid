@@ -57,16 +57,16 @@ const NewsForm = () => {
         RealStateRegistration.append("description", description);
         RealStateRegistration.append("pictures", pictures);
         RealStateRegistration.append("lat", 2);
-        RealStateRegistration.append("lon", 2);
+        RealStateRegistration.append("lang", 2);
 
         const res = await axios({
             method: "post",
             url: NewsApi,
             data: RealStateRegistration,
-            headers: { "Content-Type": "multipart/form-data" },
+            headers: { "Content-Type": "multipart/form-data" , 'Authorization':localStorage.getItem('token') },
           });
           if(res.status===201){
-            toast.success("حساب شما با موفقیت ساخته شد");
+            toast.success(res.data.message);
             setShowLoading(false);
           }
     }catch(err){
