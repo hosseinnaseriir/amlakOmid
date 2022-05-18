@@ -1,12 +1,41 @@
-import { Container, Row, Col} from 'react-bootstrap';
 import DetailsSidBar from '../components/detailsSideBar';
 import HomeDetailsContent from '../components/HomeDetailsContent';
 import SugessBox from './../blocks/sugess/SugessBox';
-
+import { useLocation } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useEffect, useState, useContext } from 'react';
+import  axios  from 'axios';
+import parse from 'html-react-parser';
+import { toast } from 'react-toastify';
+import { context } from './../context/index';
+import { SinglePropertyApi } from './../api/index';
 
 
 
 function AdvisorDetail() {
+
+  const location =useLocation();
+  const {setShowLoading} = useContext(context);
+  const [singleBlog,setSingleBlog]= useState({})
+
+
+  useEffect(() => {
+    setShowLoading(true);
+
+    console.log(location.search)
+    console.log(location.search.substring(1))
+    axios.get(SinglePropertyApi(location.search.substring(1)))
+    .then((res)=>{
+        setSingleBlog(res.data)
+    setShowLoading(false);
+
+    }).catch((err)=>{
+        toast.err('مشکلی پیش آمده است !')
+    setShowLoading(false);
+
+    })
+}, []);
+
   return (
         <Container  className="pt-5 mt-5 pb-4">
           <Row>

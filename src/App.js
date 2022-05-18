@@ -20,6 +20,7 @@ import SignIn from './components/SignIn/index';
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from './components/Loading/index';
+import SpecialSale from './pages/SpecialSale';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route path="/rules" element={<Rules/>} />
         <Route path="/faq" element={<FaqPage/>} />
         <Route path="/signin" element={<SignIn/>} />
+        <Route path="/specialSale" element={<SpecialSale/>} />
       </Routes>
       <Footer/>
     </div>

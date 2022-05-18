@@ -8,4 +8,5 @@ export const ArticlesApi=`${BASE_URL}/articles`
 export const ContactApi=`${BASE_URL}/contact`
 export const NewsApi=`${BASE_URL}/property/add`
 export const PropertiesApi=`${BASE_URL}/properties`
+export const SinglePropertyApi=(id)=>`${BASE_URL}/properties/single?id=${id}`
 export const SingleBlogApi=(normalName)=>`${BASE_URL}/articles/single?normalName=${normalName}`

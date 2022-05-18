@@ -8,9 +8,11 @@ import  axios  from 'axios';
 import {PropertiesApi, STATICS} from "../api";
 import { context } from './../context/index';
 import ReactPaginate from 'react-paginate';
+import Title from './../microComponents/Title';
+import SaleBox from '../components/SaleBox';
 
 
-function Buy() {
+function SpecialSale() {
 
 
     const [itemsPerPage, setItemsPerPage] = useState(8);
@@ -68,14 +70,22 @@ function Buy() {
   return (
         <Container  className="Home pt-5 mt-5 pb-4">
 
+            <Title title="لیست تمامی املاک مزایده ای"/>
+
+
+         
             <Row>
-                <Col lg={12} sm={12} className='mx-auto'><BuySearch/></Col>
-            </Row>
 
-          
-            <SugessBox properties={properties}/> 
+      <SaleBox myClass='col-lg-3 col-md-4' img='./img/card5.png' discription='  مزایده فروش یک باب خانه به مساحت 198 متر مربع'/>
+      <SaleBox myClass='col-lg-3 col-md-4' img='./img/card5.png' discription='  مزایده فروش یک باب خانه به مساحت 198 متر مربع'/>
+      <SaleBox myClass='col-lg-3 col-md-4' img='./img/card5.png' discription='  مزایده فروش یک باب خانه به مساحت 198 متر مربع'/>
+      <SaleBox myClass='col-lg-3 col-md-4' img='./img/card5.png' discription='  مزایده فروش یک باب خانه به مساحت 198 متر مربع'/>
+      <SaleBox myClass='col-lg-3 col-md-4' img='./img/card5.png' discription='  مزایده فروش یک باب خانه به مساحت 198 متر مربع'/>
+
+ 
 
 
+</Row>
 
             
             <ReactPaginate
@@ -93,4 +103,4 @@ function Buy() {
   );
 }
 
-export default Buy;
+export default SpecialSale;
