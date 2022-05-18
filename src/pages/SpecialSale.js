@@ -70,11 +70,12 @@ function SpecialSale() {
   return (
         <Container  className="Home pt-5 mt-5 pb-4">
 
-            <Title title="لیست تمامی املاک مزایده ای"/>
+      <Title title="املاک مزایده ای فروش فوری"/>
 
 
-         
-            <Row>
+      <Title title="لیست تمامی املاک مزایده ای"/>
+ 
+      <Row>
 
       <SaleBox myClass='col-lg-3 col-md-4' img='./img/card5.png' discription='  مزایده فروش یک باب خانه به مساحت 198 متر مربع'/>
       <SaleBox myClass='col-lg-3 col-md-4' img='./img/card5.png' discription='  مزایده فروش یک باب خانه به مساحت 198 متر مربع'/>
@@ -85,7 +86,7 @@ function SpecialSale() {
  
 
 
-</Row>
+    </Row>
 
             
             <ReactPaginate

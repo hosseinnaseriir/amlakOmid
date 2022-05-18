@@ -3,9 +3,9 @@ import {faHome,faBed,faMapMarkerAlt,faColumns,faClock,faPhone} from '@fortawesom
 import Btn from '../microComponents/Btn'
 import { Link } from 'react-router-dom';
 
-function Estate({ to , img,title,profile,meter,time,type,bed,price,location,myClass,phoneNumber}) { 
+function Estate({ to='#' , img,title,profile,meter,time,type,bed,price,location,myClass,phoneNumber}) { 
   return (
-        <Link to={to} style={{textDecoration:'none'}} className={"p-2 " + myClass}>
+        <Link to={to} style={{textDecoration:'none'}} className={"p-2 d-block " + myClass}>
         <div className="shadow-es text-center pb-2 overflow-hidden rounded-3">
             <img src={img} className="w-100" height={155}/>
             <div className="d-flex justify-content-between px-2 pt-3 dir-r">

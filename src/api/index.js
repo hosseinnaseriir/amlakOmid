@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:5000';
+export const BASE_URL = 'https://younesi-api.iran.liara.run'
 export const STATICS=`${BASE_URL}/static/uploads/`
 export const AdvisorRegistreApi=`${BASE_URL}/auth/register/moshaver`
 export const RealStateRegistrationApi=`${BASE_URL}/auth/register/amlak`
